@@ -2,6 +2,9 @@
 
 Python with pytesseract OCR engine and custom trained splitgate font to get match score of splitgate game and send them to websocket server.
 
+![image](https://user-images.githubusercontent.com/74879467/129587165-8869a8e6-9e15-46f7-89fa-3f45e76887c1.png)
+
+
 ## Installation
 
 ```bash
