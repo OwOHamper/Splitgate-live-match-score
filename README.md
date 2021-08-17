@@ -1,4 +1,4 @@
-[![Discord](https://img.shields.io/discord/872101595037446144?color=%236a7ec5&label=discord&logo=discord&style=plastic)](https://discord.gg/qbDUUx3nPW) 
+[![Discord](https://img.shields.io/discord/876769819821756466?color=%236a7ec5&label=discord&logo=discord&style=plastic)](https://discord.gg/qbDUUx3nPW)
 
 # Splitgate live match score
 
