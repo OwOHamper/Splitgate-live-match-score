@@ -18,7 +18,8 @@ except ModuleNotFoundError:
 cooldown = 0.2
 #port where local websocket will be hosted
 port = 5521
-
+#max score for ocr validation
+max_score = 600
 
 pytesseract.pytesseract.tesseract_cmd = os.getenv("LOCALAPPDATA") + r"\Programs\Tesseract-OCR\tesseract"
 # ^ DEFAULT TESSERACT LOCATIONL, IF YOU DON'T HAVE TESSERACT INSTALLED TYPE THIS
@@ -87,7 +88,7 @@ def without_websocket():
         alpha_img, bravo_img = convert_to_pil_image(alpha, bravo)
         alpha_score = image_to_score(alpha_img)
         bravo_score = image_to_score(bravo_img)
-        if int(alpha_score) < 200 and int(bravo_score) < 200 and int(alpha_score) > -10 and int(bravo_score) > -10:
+        if int(alpha_score) < max_score and int(bravo_score) < max_score and int(alpha_score) > -10 and int(bravo_score) > -10:
             # any wss or anything about score do here
             if [alpha_score, bravo_score] != prev_score:
                 prev_score = [alpha_score, bravo_score]
@@ -108,7 +109,7 @@ async def websocket_server(websocket, path):
         alpha_img, bravo_img = convert_to_pil_image(alpha, bravo)
         alpha_score = image_to_score(alpha_img)
         bravo_score = image_to_score(bravo_img)
-        if int(alpha_score) < 200 and int(bravo_score) < 200 and int(alpha_score) > -10 and int(bravo_score) > -10:
+        if int(alpha_score) < max_score and int(bravo_score) < max_score and int(alpha_score) > -10 and int(bravo_score) > -10:
             # any wss or anything about score do here
             if [alpha_score, bravo_score] != prev_score:
                 prev_score = [alpha_score, bravo_score]
